@@ -14,7 +14,7 @@ function App () {
     let [switchOn, setSwitchOn] = useState<boolean>(false);
   return (
       <div className={"App"}>
-          <OnOff on={} onChange={} />
+          {/*<OnOff on={} onChange={} />*/}
           <UnControlledOnOff onChange={setSwitchOn} /> {switchOn. toString()}
           {/*<UnControlledOnOff on={switchOn} onChange={()=>setSwitchOn(switchOn)}/>*/}
           <PageTitle title={'hello'}/>
