@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {action } from '@storybook/addon-actions';
 import {Rating, RatingValueType} from "./Rating";
+import {action} from "@storybook/addon-actions";
 
 export default {
     title: 'Rating',
