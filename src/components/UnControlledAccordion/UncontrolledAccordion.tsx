@@ -1,4 +1,4 @@
-import React, {useReducer} from "react";
+import React, {memo, useReducer} from "react";
 import {reducer, TOGGLE_CONSTANT} from "./reducer";
 
 type AccordionPropsType = {
@@ -7,7 +7,7 @@ type AccordionPropsType = {
 }
 
 
- export function UncontrolledAccordion (props: AccordionPropsType ) {
+ export const UncontrolledAccordion = memo( (props: AccordionPropsType )=> {
     console.log("Accordion rendering")
 let [collapsed, dispatch] = useReducer(reducer, {collapsed:false})
     return <div>
@@ -15,7 +15,7 @@ let [collapsed, dispatch] = useReducer(reducer, {collapsed:false})
         dispatch({type: TOGGLE_CONSTANT}) } }/>
         {!collapsed && <AccordionBody/>} {/*заменяет if else*/}
     </div>
-}
+})
 
 type AccordionTitlePropsType = {
     title: string

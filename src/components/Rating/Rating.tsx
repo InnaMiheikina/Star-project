@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {memo, useState} from "react";
 
 export type RatingValueType = 0| 1| 2| 3| 4| 5 |number;
 
@@ -7,7 +7,7 @@ export type RatingPropsType = {
     onClick:( value: RatingValueType)=> void
 }
 
- export function  Rating (props: RatingPropsType) {
+ export const Rating = memo((props: RatingPropsType)=> {
 
          return (
              <div>
@@ -18,7 +18,7 @@ export type RatingPropsType = {
                  <Star selected={props.value >4} onClick={props.onClick} value={5}/>
              </div>
          )
-     }
+     })
  type StarPropsType ={
     selected: boolean
      value: RatingValueType

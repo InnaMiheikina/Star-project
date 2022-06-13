@@ -1,11 +1,11 @@
-import React, {useState} from "react";
+import React, {memo, useState} from "react";
 
 type PropsType = {
     on: boolean
     onChange: (on: boolean) => void
 }
 
-export const OnOff = (props: PropsType) => {
+export const OnOff = memo( (props: PropsType) => {
 
     const onStyle = {
         width: "30px",
@@ -41,4 +41,4 @@ export const OnOff = (props: PropsType) => {
         <div style={indicatorStyle}></div>
     </div>
 
-};
+});

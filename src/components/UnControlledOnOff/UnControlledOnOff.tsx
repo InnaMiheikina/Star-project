@@ -1,11 +1,11 @@
-import React, {useState} from "react";
+import React, {memo, useState} from "react";
 
 type PropsType = {
     onChange: (on: boolean) => void
     defaultOn?: boolean
 }
 
-export const UnControlledOnOff = (props: PropsType) => {
+export const UnControlledOnOff = memo( (props: PropsType) => {
 
     let [on, setOn] = useState( props.defaultOn ? props.defaultOn : false);
 
@@ -55,4 +55,4 @@ export const UnControlledOnOff = (props: PropsType) => {
         <div style={indicatorStyle}></div>
     </div>
 
-};
+});

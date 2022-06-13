@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {memo, useState} from "react";
 
 export type RatingValueType = 0| 1| 2| 3| 4| 5 |number;
 type RatingPropsType = {
@@ -6,7 +6,7 @@ defaultValue?:RatingValueType
     onChange: (value:RatingValueType)=>void
 }
 
- export function  UncontrolledRating (props: RatingPropsType) {
+ export const  UncontrolledRating = memo((props: RatingPropsType)=> {
 
     let [value, setValue] = useState<RatingValueType>(props.defaultValue ? props.defaultValue: 0)
 
@@ -19,7 +19,7 @@ defaultValue?:RatingValueType
                  <Star selected={value >4} setValue={()=>{setValue (5); props.onChange(5);} }/>
              </div>
          )
-     }
+     })
  type StarPropsType ={
     selected: boolean
      setValue:()=> void
